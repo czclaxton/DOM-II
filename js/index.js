@@ -55,4 +55,32 @@ document.querySelector("html").addEventListener("keydown", function(){
 document.querySelector("html").style.color = color[i]
 });
 
+// let loadAnimation = document.querySelectorAll(".set img")
+// loadAnimation.addEventListener("load", function(){
+//     loadAnimation.forEach(function(a){
+//         a.style.opacity="1";
+// })
+
+window.addEventListener('load', () => {
+    return alert('page is fully loaded');
+});
+
+window.addEventListener('beforeunload', (event) => {
+    event.preventDefault();
+    event.returnValue = '';
+  });
+
+let navPrevent = document.getElementsByClassName("nav");
+navPrevent.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.returnValue = '';
+  });
+
+  window.addEventListener('online', () => {
+    console.log("You are now connected to the network.");
+});
+
+window.addEventListener('offline', () => {
+    console.log("The network connection has been lost.");
+});
 
