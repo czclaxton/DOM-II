@@ -70,7 +70,7 @@ window.addEventListener('beforeunload', (event) => {
     event.returnValue = '';
   });
 
-let navPrevent = document.getElementsByClassName("nav");
+let navPrevent = document.getElementsByClassName("nav-link");
 navPrevent.addEventListener('click', (event) => {
     event.preventDefault();
     event.returnValue = '';
@@ -84,3 +84,16 @@ window.addEventListener('offline', () => {
     console.log("The network connection has been lost.");
 });
 
+window.addEventListener('resize', () =>{return alert("STOP IT!")});
+
+let x = document.querySelector(".opacityDiv");
+let y = document.querySelector(".footer");
+
+y.addEventListener("click", () => {
+  console.log("did it");
+})
+
+x.addEventListener('click', () => {
+  console.log("also did it");
+  e.stopPropagation();
+})
